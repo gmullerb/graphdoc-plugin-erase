@@ -13,6 +13,7 @@
 [![ ](https://gitlab.com/gmullerb/graphdoc-plugin-erase/badges/master/coverage.svg)](https://gmullerb.gitlab.io/graphdoc-plugin-erase/coverage/index.html)
 [![Github repo](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/gmullerb/graphdoc-plugin-erase)
 [![Gitlab repo](https://badgen.net/badge/icon/gitlab?icon=gitlab&label)](https://gitlab.com/gmullerb/graphdoc-plugin-erase)
+
 __________________
 
 ## Quick Start
@@ -22,11 +23,9 @@ __________________
 `package.json`:
 
 ```json
-  ..
   "devDependencies": {
     "@2fd/graphdoc": "2.4.0",
-    "graphdoc-plugin-erase": "1.0.0",
-    ..
+    "graphdoc-plugin-erase": "1.0.1",
 ```
 
 2 . If default options are not suitable, then Configure `graphdoc-plugin-erase`:
@@ -46,11 +45,22 @@ __________________
 
 `package.json`:
 
-```sh
-  graphdoc -p graphdoc/../../graphdoc-plugin-erase -p graphdoc/plugins/default -s ./schema.GraphQL -o ./build/documentation
+```json
+  "scripts": {
+    "doc": "graphdoc -p graphdoc/../../graphdoc-plugin-erase -p graphdoc/plugins/default -s ./schema.graphql -o ./build/documentation"
+  }
+```
+
+or if using `graphdoc-plugin-flexible` instead of graphdoc default plugins
+
+```json
+  "scripts": {
+    "doc": "graphdoc -p graphdoc/../../graphdoc-plugin-erase -p graphdoc/../../graphdoc-plugin-flexible -s ./schema.graphql -o ./build/documentation"
+  }
 ```
 
 > `graphdoc/../../` this is required to get external plugins working in `graphdoc`.
+
 __________________
 
 ## Goals
@@ -87,17 +97,24 @@ __________________
 
 __________________
 
+## Documentation
+
+* [Main documentation](https://graphdoc-plugins.github.io/docs/graphdoc-plugin-erase.html).
+
+* [`CHANGELOG`](CHANGELOG.html): contains the information about changes in each version, chronologically ordered ([Keep a Changelog](http://keepachangelog.com)).
+
 ## Contributing
 
 * **Use it**.
 * **Share it**.
-* [Give it a Star](https://github.com/gmullerb/eslint-plugin-regex).
-* [Propose changes or improvements](https://github.com/gmullerb/eslint-plugin-regex/issues).
-* [Report bugs](https://github.com/gmullerb/eslint-plugin-regex/issues).
+* [Give it a Star](https://github.com/gmullerb/graphdoc-plugin-erase).
+* [Propose changes or improvements](https://github.com/gmullerb/graphdoc-plugin-erase/issues).
+* [Report bugs](https://github.com/gmullerb/graphdoc-plugin-erase/issues).
 
 ## License
 
 [MIT License](LICENSE.txt)
+
 __________________
 
 ## Remember
