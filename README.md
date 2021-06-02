@@ -3,7 +3,7 @@
   <a href="https://graphdoc-plugins.github.io"><img src="docs/graphdoc-plugin-erase.png" alt=" "/></a>
 </p>
 
-<h1 align="center">GraphQL documentation erasing unwanted types using graphdoc</h1>
+<h1 align="center">GraphQL schema HTML documentation generation, erasing unwanted types using graphdoc</h1>
 
 [![graphdoc-plugin-erase](https://badgen.net/badge/homepage/graphdoc-plugin-erase/blue)](https://graphdoc-plugins.github.io)
 [![graphdoc-plugin-erase](https://badgen.net/badge/npm%20pack/graphdoc-plugin-erase/blue)](https://www.npmjs.com/package/graphdoc-plugin-erase)
@@ -25,7 +25,7 @@ __________________
 ```json
   "devDependencies": {
     "@2fd/graphdoc": "2.4.0",
-    "graphdoc-plugin-erase": "1.0.1",
+    "graphdoc-plugin-erase": "1.1.0",
 ```
 
 2 . If default options are not suitable, then Configure `graphdoc-plugin-erase`:
@@ -36,6 +36,7 @@ __________________
 {
   "graphdoc-plugin-erase": {
     "eraseByNameRegex": "\\w*No",
+    "eraseByDescriptionRegex": "@RemoveFromDocumentation",
     "eraseByKindRegex": "(?:UNION|SCALAR)"
   }
 }
@@ -77,15 +78,22 @@ __________________
 {
   "graphdoc-plugin-erase": {
     "eraseByNameRegex": "^__",
+    "eraseByDescriptionRegex": "^$",
     "eraseByKindRegex": "^$"
   }
 }
 ```
 
-* `eraseByNameRegex`: Regular Expression to be used to remove type based on `name`.
-* `eraseByKindRegex`: Regular Expression to be used to remove type based on `kind`.
+* `eraseByNameRegex`: Regular Expression to be used to remove types, based on `name`.
+* `eraseByDescriptionRegex`: Regular Expression to be used to remove types, based on `description`.
+* `eraseByKindRegex`: Regular Expression to be used to remove types, based on `kind`.
 
 > `graphdoc-plugin-erase` plugin should be add before the plugins we want to have filtered types.
+
+## Online Examples
+
+* Pokemon GraphQL schema: [Project](https://github.com/gmullerb/base-graphdoc-yarn) and [Online generated documentation](https://gmullerb.gitlab.io/base-graphdoc-yarn).
+* Github GraphQL schema: [Project](https://github.com/gmullerb/base-graphdoc-npm) and [Online generated documentation](https://gmullerb.gitlab.io/base-graphdoc-npm).
 
 __________________
 

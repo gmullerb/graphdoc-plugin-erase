@@ -1,7 +1,7 @@
 {
   "name": "graphdoc-plugin-erase",
-  "description": "GraphQL documentation erasing unwanted types using graphdoc",
-  "version": "1.0.1",
+  "description": "GraphQL schema HTML documentation generation, erasing unwanted types using graphdoc",
+  "version": "1.1.0",
   "license": "MIT",
   "author": "Gonzalo Müller Bravo",
   "main": "lib/index.js",

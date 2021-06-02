@@ -15,13 +15,17 @@ it('should erase with default options', function() {
       name: 'op3',
       description: 'op3Desc',
       kind: 'OBJECT'
+    }, {
+      name: 'op4',
+      description: 'op4Desc @RemoveFromDocumentation',
+      kind: 'OBJECT'
     }]
   }
 
   new GraphdocPluginErase.default(schema, {}, {})
 
-  expect(schema.types).toHaveLength(2)
-  expect(schema.types.map(type => type.name)).toEqual(expect.arrayContaining(['op1', 'op3']))
+  expect(schema.types).toHaveLength(3)
+  expect(schema.types.map(type => type.name)).toEqual(expect.arrayContaining(['op1', 'op3', 'op4']))
 })
 
 it('should erase with new options', function() {
@@ -37,12 +41,17 @@ it('should erase with new options', function() {
       name: 'op3',
       description: 'op3Desc',
       kind: 'OBJECT'
+    }, {
+      name: 'op4',
+      description: 'op4Desc @RemoveFromDocumentation',
+      kind: 'OBJECT'
     }]
   }
 
   new GraphdocPluginErase.default(schema, {
       'graphdoc-plugin-erase': {
         eraseByNameRegex: '_o',
+        eraseByDescriptionRegex: "@RemoveFromDocumentation",
         eraseByKindRegex: 'SCALAR'
       }
     }, {})
